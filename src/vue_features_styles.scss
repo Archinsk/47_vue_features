@@ -1,0 +1,37 @@
+section {
+  .description {
+    background-color: #ececec;
+    padding: 0.25rem 0.75rem;
+    border: grey solid 1px;
+    border-radius: 0.25rem;
+  }
+
+  .purpose {
+    background-color: #ececec;
+    padding: 0.25rem 0.75rem;
+    border: grey solid 1px;
+    border-radius: 0.25rem;
+  }
+
+  .features-table {
+    .table-title {
+      background-color: gray;
+    }
+
+    .row {
+      padding-top: 0.25rem;
+      padding-bottom: 0.25rem;
+
+      &:nth-child(even) {
+        background-color: lightgray;
+      }
+    }
+  }
+}
+
+.buttonIconSquare {
+  line-height: 0.75;
+  padding-left: 0.375rem;
+  padding-right: 0.375rem;
+}
+
