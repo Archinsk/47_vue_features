@@ -15,10 +15,11 @@
     <PropsTransferParent description="" type="null" :option="propNull" />
     <PropsTransferParent description="" type="undefined" />
     <PropsTransferParent description="" type="Объект" :option="propObject" />
+    <PropsTransferParent description="" type="Массив" :option="propArray" />
     <PropsTransferParent description="" type="Дата" :option="propDate" />
     <PropsTransferParent description="" type="Функция" :option="propFunction" />
     <PropsTransferParent description="" type="Символ" :option="propSymbol" />
-    <ButtonIconSquare icon="refresh" class="btn-primary mt-3" />
+    <ButtonIconSquare @click-handler="refresh" icon="refresh" class="btn-primary mt-3" />
   </div>
 </template>
 
@@ -36,9 +37,9 @@ export default {
 
   data() {
     return {
-      propString: "Text",
+      propString: "OldString",
       propNumber: 13,
-      propBoolean: true,
+      propBoolean: false,
       propNull: null,
       propArray: [1, 2, 3, 4, 5],
       propObject: {
@@ -60,10 +61,10 @@ export default {
   },
 
   methods: {
-    changeInitData() {
-      this.propString = "New text";
+    refresh() {
+      this.propString = "NewString";
       this.propNumber = 258;
-      this.propBoolean = false;
+      this.propBoolean = true;
       this.propArray = [10, 9, 8, 7, 6];
       this.propObject = {
         user: {
@@ -75,11 +76,12 @@ export default {
           },
         },
       };
-      this.propDate = new Date(1600000000);
+      this.propDate = new Date(1300000000000);
       this.propFunction = function multiplication(value) {
         return value * 3;
       };
       this.propSymbol = Symbol("user");
+      console.log("Обновление значений прародителя");
     },
   },
 };
